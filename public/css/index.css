@@ -1,0 +1,22 @@
+#rcorners1 {
+    border-radius: 100%;
+    padding: 10px;
+    background-color: grey;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+    margin-right: 650px;
+    border-style: solid;
+    border-color: white;
+}
+
+.container1 {
+    width: 50px;
+    background-color: whitesmoke;
+}
+
+.container2 {
+    width: 750px;
+    height: 80px;
+    background-color: transparent;
+}
