@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+
 * {
 	box-sizing: border-box;
 
@@ -40,13 +41,11 @@ a {
 	text-decoration: none;
 	margin: 15px 0;
 }
-button .facebook{
-	size: 30cm;
-}
+
 
 button {
+	border: none;
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
 	color: #FFFFFF;
 	font-size: 12px;
@@ -67,6 +66,15 @@ button {
     border-radius: 4px;
     color: #787878;
   }
+.google{
+	background-color: red;
+	width: 22vw;
+}
+.facebook{
+	background-color: blue;
+	width: 22vw;
+}
+
 
 form {
 	background-color: #FFFFFF;
@@ -121,9 +129,8 @@ input {
 
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-color: #20bf55;
+	background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);	
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
