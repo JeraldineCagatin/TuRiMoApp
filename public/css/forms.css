@@ -2,7 +2,9 @@
 
 * {
 	box-sizing: border-box;
+
 }
+
 
 body {
 	background: #f3e0e2;
@@ -37,6 +39,9 @@ a {
 	font-size:12px;
 	text-decoration: none;
 	margin: 15px 0;
+}
+button .facebook{
+	size: 30cm;
 }
 
 button {

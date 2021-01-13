@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuRiMo|SignUp Now for Free</title>
+
+  <!-- CSS -->
+  <link href="css/forms.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <body style="background-image: url('images/tullahan.jpg');">
+    <div class="container">
+      <div class="form-container log-in-container">
+        <form id="signup-form">
+          <h1>SIGN UP NOW</h1>
+
+          <a class="waves-effect waves-light btn" id="googleSignIn">
+            <i class="material-icons left">cloud</i>
+           <button> Google Sign In</button>
+          </a>
+          <a class="waves-effect waves-light btn" id="facebookSignIn">
+            <i class="material-icons left">facebook</i>
+            <button>Facebook Sign In</button>
+          </a>
+
+          <span>OR</span>
+
+          <input id="signup-email" type="email" placeholder="Email" class="validate" required>
+          <input id="signup-password" type="password" placeholder="Password" class="validate" required>
+
+          <button>SIGN UP</button>
+&nbsp
+          <h4> ALREADY A MEMBER?  <a href="login.html"> Click here.</a></h4>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <h1>TULLAHAN RIVER MONITORING WEB APP</h1>
+            
+
+
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
+        authDomain: "turimoapp.firebaseapp.com",
+        projectId: "turimoapp",
+        storageBucket: "turimoapp.appspot.com",
+        messagingSenderId: "905578158491",
+        appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
+        measurementId: "G-FQ8LEKM1J2"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+    </script>
+    <script src="js/auth.js" type="text/javascript"></script>
+
+  </body>
+
+</html>
