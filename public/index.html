@@ -2,10 +2,13 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/forms.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuRiMo</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>TuRiMo | SignUp</title>
 </head>
 
 <body>
@@ -29,6 +32,7 @@
         <input id="signup-password" type="password" placeholder="Password" class="validate" required>
 
         <button>Sign Up</button>
+        <p id="userName"></p>
       </form>
     </div>
 
@@ -43,8 +47,9 @@
 
           </form>
 
-          
-          <a class="waves-effect waves-light btn logged-in" href="#!" id="signout"><i class="material-icons">close</i>Sign out</a>
+
+          <a class="waves-effect waves-light btn logged-in" href="#!" id="signout"><i
+              class="material-icons">close</i>Sign out</a>
 
         </div>
       </div>
@@ -58,27 +63,26 @@
 
 
   <!-- javascript list -->
-
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-
   <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyAtmiFsiCBDLaexjK4w__8AHHhB3t01658",
-      authDomain: "mockup-project-c3c0c.firebaseapp.com",
-      projectId: "mockup-project-c3c0c",
-      storageBucket: "mockup-project-c3c0c.appspot.com",
-      messagingSenderId: "270378103583",
-      appId: "1:270378103583:web:db3fb84473bb77edbab62a",
-      measurementId: "G-P7MM7ZBFER"
+    const firebaseConfig = {
+      apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
+      authDomain: "turimoapp.firebaseapp.com",
+      projectId: "turimoapp",
+      storageBucket: "turimoapp.appspot.com",
+      messagingSenderId: "905578158491",
+      appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
+      measurementId: "G-FQ8LEKM1J2"
     };
-
+    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
+    // Shorcut firebase.auth to auth
     const auth = firebase.auth();
   </script>
-
-  <script type="text/javascript" src="js/auth.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/index.js" type="text/javascript"></script>
+  <script src="js/auth.js" type="text/javascript"></script>
 
 </body>
 
