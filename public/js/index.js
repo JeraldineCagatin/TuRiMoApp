@@ -1,34 +1,29 @@
-  
+  // setup guides
+const loggedOutlinks = document.querySelectorAll('.logged-out');
+const loggedInlinks = document.querySelectorAll('.logged-in');
 
+const setupUI = (user) => {
+    if (user) {
+        //toggle UI elements
+        loggedInlinks.forEach(item => item.style.display = 'block');
+        loggedOutlinks.forEach(item => item.style.display = 'none');
+    }
 
-// REVEAL NAVBAR HAMBURGER
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
+    else {
+        //toggle UI elements
 
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+        loggedInlinks.forEach(item => item.style.display = 'none');
+        loggedOutlinks.forEach(item => item.style.display = 'block');
+    }
+};
 
-
-
-//   <nav>
-//     <div class="nav-wrapper">
-//       <a href="#!" class="brand-logo">Logo</a>
-//       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-//       <ul class="right hide-on-med-and-down">
-//         <li><a href="sass.html">Sass</a></li>
-//         <li><a href="badges.html">Components</a></li>
-//         <li><a href="collapsible.html">Javascript</a></li>
-//         <li><a href="mobile.html">Mobile</a></li>
-//       </ul>
-//     </div>
-//   </nav>
-
-//   <ul class="sidenav" id="mobile-demo">
-//     <li><a href="sass.html">Logo</a></li>
-//     <li><a href="badges.html">Components</a></li>
-//     <li><a href="collapsible.html">Javascript</a></li>
-//     <li><a href="mobile.html">Mobile</a></li>
-//   </ul>
+// Get the currently signed-in user
+auth.onAuthStateChanged((user) => {
+  if (user) {
+      console.log(user);
+      setupUI(user);
+  } else {
+      console.log('no user logged in');
+      setupUI();
+  }
+});

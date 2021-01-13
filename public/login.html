@@ -1,29 +1,57 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="css/forms.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuRiMo | Welcome Back</title>
+
+  <!-- CSS -->
+  <link href="css/forms.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>TuRiMo | SignUp</title>
+
 </head>
 
 <body>
+
   <div class="container">
     <div class="form-container log-in-container">
-      <form id="signup-form">
-        <h1 id="userName">MY NAME IS</h1>
-        <h1 id="p"></h1>
+      <form id="login-form">
+        <h1>Welcome Back User</h1>
+
+        <a class="waves-effect waves-light btn" id="googleSignIn">
+          <i class="material-icons left">cloud</i>
+          Google Sign In
+        </a>
+        <a class="waves-effect waves-light btn" id="facebookSignIn">
+          <i class="material-icons left">facebook</i>
+          Facebook Sign In
+        </a>
+
+        <span>OR</span>
+
+        <input id="login-email" type="email" placeholder="Email" class="validate" required>
+        <input id="login-password" type="password" placeholder="Password" class="validate" required>
+
+        <button>Log In</button>
+      </form>
     </div>
 
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-right">
-          <button id="signout">SignOut</button>
+
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -50,9 +78,9 @@
     const storage = storage.auth();
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/index.js" type="text/javascript"></script>
-  <script src="js/signout.js" type="text/javascript"></script>
+  <script src="js/auth.js" type="text/javascript"></script>
+  <script src="js/login.js" type="text/javascript"></script>
+
 
 </body>
 
