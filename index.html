@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>TuRiMo | SignUp</title>
+  <style>
+.container-fluid{
+  margin-bottom: 20px;
+  background-color:whitesmoke;
+  width: 1000px;
+}
+
+#rcorners1{
+  border-radius: 100px;
+  padding: 10px;
+  background-color:grey;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
+  margin-right: 650px;
+  border-style: solid;
+  border-color: white;
+}
+.container1 {
+  width: 50px;
+  background-color: whitesmoke;
+}
+.container2{
+  width: 750px;
+  height: 80px;
+  background-color:transparent;
+
+}
+
+    
+  </style>
+</head>
+<body>
+
+
+  <div class="container-fluid">
+
+    </div>
+    <div class="container">
+    </div>
+  </div>
+  
+
+
+<p id = "rcorners1"></p>
+<div class="container2">
+ 
+  <div class="form-group">
+    <textarea class="form-control"  placeholder="Write Something...." rows="5" id="comment"></textarea>
+  </div>
+  <button style="background-color: blue;" class="button button2">SEND</button>
+ 
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- javascript list -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
+      authDomain: "turimoapp.firebaseapp.com",
+      projectId: "turimoapp",
+      storageBucket: "turimoapp.appspot.com",
+      messagingSenderId: "905578158491",
+      appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
+      measurementId: "G-FQ8LEKM1J2"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="js/auth.js" type="text/javascript"></script>
+
+</body>
+
+</html>
