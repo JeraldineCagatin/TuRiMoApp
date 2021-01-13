@@ -9,11 +9,8 @@ signupForm.addEventListener('submit', (e) => {
 
     auth.createUserWithEmailAndPassword(email, password).then((user) => {
         if (user) {
-        
-            window.location('index.html');
+            window.location = 'index.html';
             document.getElementById('userName').innerHTML=user.email;
-
-
         }
         else {
             console.log('NO USER');
@@ -32,7 +29,8 @@ loginForm.addEventListener('submit', (e) => {
 
     auth.signInWithEmailAndPassword(email, password).then((user) => {
         if (user) {
-            console.log(user);
+            window.location = 'index.html';
+            document.getElementById('userName').innerHTML=user.email;
         }
     });
 });

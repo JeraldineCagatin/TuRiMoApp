@@ -3,70 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuRiMo</title>
+  <title>TuRiMo|SignUp Now for Free</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/forms.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <div class="row">
-    <div class="col s7 push-s5"><span class="flow-text">This div is 7-columns wide on pushed to the right by
-        5-columns.</span></div>
-    <div class="col s5 pull-s7"><span class="flow-text">5-columns wide pulled to the left by 7-columns.</span></div>
-  </div>
-  <div class="row">
-    <form class="col s12" id="signup-form">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="signup-email" type="email" class="validate" required>
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="signup-password" type="password" class="validate" required>
-          <label for="password">Password</label>
-        </div>
-      </div>
+  <body>
+    <div class="container">
+      <div class="form-container log-in-container">
+        <form id="signup-form">
+          <h1>Sign Up</h1>
 
-      <button class="btn waves-effect waves-light">Submit
-        <i class="material-icons right">send</i>
-      </button>
-    </form>
+          <a class="waves-effect waves-light btn" id="googleSignIn">
+            <i class="material-icons left">cloud</i>
+            Google Sign In
+          </a>
+          <a class="waves-effect waves-light btn" id="facebookSignIn">
+            <i class="material-icons left">facebook</i>
+            Facebook Sign In
+          </a>
 
-    <form class="col s12" id="login-form">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="login-email" type="email" class="validate" required>
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="login-password" type="password" class="validate" required>
-          <label for="password">Password</label>
-        </div>
+          <span>OR</span>
+
+          <input id="signup-email" type="email" placeholder="Email" class="validate" required>
+          <input id="signup-password" type="password" placeholder="Password" class="validate" required>
+
+          <button>Sign Up</button>
+        </form>
       </div>
 
-      <button class="btn waves-effect waves-light logged-out">Sign in
-        <i class="material-icons right">send</i>
-      </button>
-    </form>
-    <a class="waves-effect waves-light btn" id="googleSignIn">
-      <i class="material-icons left">cloud</i>
-      Google Sign In
-    </a>
-    <a class="waves-effect waves-light btn" id="facebookSignIn">
-      <i class="material-icons left">facebook</i>
-      Facebook Sign In
-    </a>
-    <a class="waves-effect waves-light btn logged-in" href="#!" id="signout"><i class="material-icons">close</i>Sign
-      out</a>
-  </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <form class="" id="login-form">
+              <input id="login-email" type="email" placeholder="Email" class="validate" required>
+              <input id="login-password" type="password" placeholder="Password" class="validate" required>
+
+              <button>Log In</button>
+
+            </form>
+
+
+            <a class="waves-effect waves-light btn logged-in" href="#!" id="signout"><i
+                class="material-icons">close</i>Sign out</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -79,26 +68,26 @@
 
 
 
-  <!-- SCRIPTS -->
 
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
-      authDomain: "turimoapp.firebaseapp.com",
-      projectId: "turimoapp",
-      storageBucket: "turimoapp.appspot.com",
-      messagingSenderId: "905578158491",
-      appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
-      measurementId: "G-FQ8LEKM1J2"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-  </script>
+    <!-- SCRIPTS -->
 
-  <script src="js/auth.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
+        authDomain: "turimoapp.firebaseapp.com",
+        projectId: "turimoapp",
+        storageBucket: "turimoapp.appspot.com",
+        messagingSenderId: "905578158491",
+        appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
+        measurementId: "G-FQ8LEKM1J2"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+    </script>
+    <script src="js/auth.js" type="text/javascript"></script>
 
-</body>
+  </body>
 
 </html>
