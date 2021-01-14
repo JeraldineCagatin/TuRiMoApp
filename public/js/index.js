@@ -20,7 +20,7 @@
           console.log(user);
           setupUI(user);
       } else {
-          console.log('no user logged in');
+          console.log('No User Found');
           setupUI();
       }
   });

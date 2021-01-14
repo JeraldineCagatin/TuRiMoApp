@@ -1,8 +1,6 @@
-// signout user
 const signOut = document.querySelector('#signout');
-signout.addEventListener('click', (e) => {
+signOut.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
-    window.location = 'register.html';
-
+    location.reload();
 });

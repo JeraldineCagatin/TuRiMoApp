@@ -16,9 +16,19 @@ signupForm.addEventListener('submit', (e) => {
             newUser.updateProfile({
                 displayName: firstName + ' ' + lastName,
                 photoURL: "https://static.vecteezy.com/system/resources/thumbnails/000/364/628/original/Chef_Avatar_Illustration-03.jpg"
-                    // db.collection('users').add({})
             }).then(function() {
                 window.location = 'index.html';
+
+                db.collection('users').add({
+                    firstName: newUser['firstName'].value,
+                    lastName: newUser['lastName'].value,
+                    email: newUser['email'].value,
+                }).then(function() {
+                    alert('Welcome to TuRiMo');
+                }).catch(function(error) {
+                    console.log(error);
+                });
+
             }).catch(function(error) {
                 console.log(error);
             });

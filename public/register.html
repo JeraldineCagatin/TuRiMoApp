@@ -52,9 +52,10 @@
             measurementId: "G-FQ8LEKM1J2"
         };
         firebase.initializeApp(firebaseConfig);
+
         const auth = firebase.auth();
-        const firestore = firestore.auth();
-        const storage = storage.auth();
+        const db = firebase.firestore();
+        const storage = firebase.storage();
     </script>
 
     <script src="js/register.js" type="text/javascript"></script>

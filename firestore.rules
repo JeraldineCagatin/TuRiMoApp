@@ -1,17 +1,14 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // match /users/{userId} {
-          match /recipe/{recipeId} {
+          match /users/{usersId} {
           allow read: if true
-          allow create: if request.auth.uid != null;
-          allow update, delete: 
-          if request.auth != null && request.auth.uid == resource.data.recipeAuthorUID;
+          allow create: if request.auth.uid != null
       }
-    // }
     
     match /comment/{commentId} {
         allow write, read: if request.auth.uid != null;
       }
+      
   }
 }
