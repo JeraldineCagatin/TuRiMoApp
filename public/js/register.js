@@ -4,44 +4,27 @@ const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const firstName = signupForm['firstName'].value;
+    const lastName = signupForm['lastName'].value;
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
 
     auth.createUserWithEmailAndPassword(email, password).then((user) => {
         if (user) {
-            window.location = 'index.html';
-            alert("Sign-Up Succesful!")
-        }
-        else {
-            console.log('NO USER');
+            var newUser = firebase.auth().currentUser;
+
+            newUser.updateProfile({
+                displayName: firstName + ' ' + lastName,
+                photoURL: "https://static.vecteezy.com/system/resources/thumbnails/000/364/628/original/Chef_Avatar_Illustration-03.jpg"
+                    // db.collection('users').add({})
+            }).then(function() {
+                window.location = 'index.html';
+            }).catch(function(error) {
+                console.log(error);
+            });
+
+        } else {
+            console.log('Invalid User');
         }
     });
 });
-
-
-
-function checkUserFullName(){
-    var userSurname = document.getElementById("userFullName").value;
-    var flag = false;
-    if(userSurname === ""){
-        flag = true;
-    }
-    if(flag){
-        document.getElementById("userFullNameError").style.display = "block";
-    }else{
-        document.getElementById("userFullNameError").style.display = "none";
-    }
-}
-
-function checkUserSurname(){
-    var userSurname = document.getElementById("userSurname").value;
-    var flag = false;
-    if(userSurname === ""){
-        flag = true;
-    }
-    if(flag){
-        document.getElementById("userSurnameError").style.display = "block";
-    }else{
-        document.getElementById("userSurnameError").style.display = "none";
-    }
-}
