@@ -13,25 +13,32 @@
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper green darken-2">
-            <a href="#!" class="brand-logo">Tullahan River Monitoring</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="stream.html">Stream</a></li>
-                <li><a href="news.html">News</a></li>
+    <nav class="z-depth-3">
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Logo</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li>
-                    <form id="signup-form"></form><a class="waves-effect waves-light btn logged-in" href="#!" id="signout">Sign out</a></li>
+                    <a data-target="slide-out" class="sidenav-trigger show-on-large">
+                        <i class="material-icons">
+                        menu
+                    </i>
+                    </a>
+                </li>
             </ul>
-
         </div>
     </nav>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="stream.html">Stream</a></li>
-        <li><a href="news.html">News</a></li>
+    <ul id="slide-out" class="sidenav">
+        <li class="logged-out"><a class="waves-effect" href="login-page.html"><i class="material-icons">login</i>Sign in now!</a></li>
+        <li class="logged-out"><a class="waves-effect" href="register.html"><i class="material-icons">person_add_alt_1</i>Join the Community!</a></li>
+        <li class="logged-in"><a class="waves-effect" href="post.html"><i class="material-icons">post_add</i>Share your Recipes</a></li>
+        <li class="logged-in"><a class="waves-effect" href="profile.html"><i class="material-icons">person</i>Check your Recipes</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="index.html"><i class="material-icons">house</i>Home</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">restaurant</i>About Us</a></li>
+        <li class="logged-in"><a class="waves-effect" href="#!" id="signout"><i class="material-icons">close</i>Sign out</a></li>
     </ul>
 
     <div class="row">
@@ -72,8 +79,16 @@
         const auth = firebase.auth();
         const db = firebase.firestore();
     </script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".sidenav").sidenav();
+        });
+    </script>
 
     <script src="js/index.js" type="text/javascript"></script>
     <script src="js/comment.js" type="text/javascript"></script>

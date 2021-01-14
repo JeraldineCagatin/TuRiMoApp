@@ -4,7 +4,7 @@ auth.onAuthStateChanged((user) => {
         console.log(user.displayName);
         postComment(user);
     } else {
-        console.log('no user logged in');
+        console.log('No User Logged In');
         postComment(null);
     }
 });
