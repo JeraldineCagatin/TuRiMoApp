@@ -10,9 +10,8 @@ signupForm.addEventListener('submit', (e) => {
     auth.createUserWithEmailAndPassword(email, password).then((user) => {
         if (user) {
             window.location = 'index.html';
-            document.getElementById('userName').innerHTML=user.email;
-        }
-        else {
+            document.getElementById('userName').innerHTML = user.email;
+        } else {
             console.log('NO USER');
         }
     });
@@ -30,7 +29,7 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then((user) => {
         if (user) {
             window.location = 'index.html';
-            document.getElementById('userName').innerHTML=user.email;
+            document.getElementById('userName').innerHTML = user.email;
         }
     });
 });
@@ -83,9 +82,7 @@ const setupUI = (user) => {
         //toggle UI elements
         loggedInlinks.forEach(item => item.style.display = 'block');
         loggedOutlinks.forEach(item => item.style.display = 'none');
-    }
-
-    else {
+    } else {
         //toggle UI elements
 
         loggedInlinks.forEach(item => item.style.display = 'none');
@@ -109,5 +106,5 @@ const signOut = document.querySelector('#signout');
 signout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
+    window.location = 'register.html';
 });
-
