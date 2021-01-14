@@ -1,83 +1,81 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuRiMo|SignUp Now for Free</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuRiMo|SignUp Now for Free</title>
 
-  <!-- CSS -->
-  <link href="css/forms.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS -->
+    <link href="css/forms.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <body>
-    <div class="container">
-      <div class="form-container log-in-container">
-        <form id="signup-form">
-          <h1>Sign Up</h1>
+    <body>
+        <div class="container">
+            <div class="form-container log-in-container">
+                <form id="signup-form">
+                    <h1>Sign Up</h1>
 
-          <a class="waves-effect waves-light btn" id="googleSignIn">
-            <i class="material-icons left">cloud</i>
-            Google Sign In
-          </a>
-          <a class="waves-effect waves-light btn" id="facebookSignIn">
-            <i class="material-icons left">facebook</i>
-            Facebook Sign In
-          </a>
+                    <a class="waves-effect waves-light btn" id="googleSignIn">
+                        <i class="material-icons left">cloud</i> Google Sign In
+                    </a>
+                    <a class="waves-effect waves-light btn" id="facebookSignIn">
+                        <i class="material-icons left">facebook</i> Facebook Sign In
+                    </a>
 
-          <span>OR</span>
+                    <span>OR</span>
 
-          <input id="signup-email" type="email" placeholder="Email" class="validate" required>
-          <input id="signup-password" type="password" placeholder="Password" class="validate" required>
+                    <input id="signup-email" type="email" placeholder="Email" class="validate" required>
+                    <input id="signup-password" type="password" placeholder="Password" class="validate" required>
 
-          <button>Sign Up</button>
-        </form>
-      </div>
+                    <button>Sign Up</button>
+                </form>
+            </div>
 
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-right">
-            <form class="" id="login-form">
-              <input id="login-email" type="email" placeholder="Email" class="validate" required>
-              <input id="login-password" type="password" placeholder="Password" class="validate" required>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <form class="" id="login-form">
+                            <input id="login-email" type="email" placeholder="Email" class="validate" required>
+                            <input id="login-password" type="password" placeholder="Password" class="validate" required>
 
-              <button>Log In</button>
+                            <button>Log In</button>
 
-            </form>
+                        </form>
 
 
-            
 
-          </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
 
 
-    <!-- SCRIPTS -->
+        <!-- SCRIPTS -->
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
-        authDomain: "turimoapp.firebaseapp.com",
-        projectId: "turimoapp",
-        storageBucket: "turimoapp.appspot.com",
-        messagingSenderId: "905578158491",
-        appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
-        measurementId: "G-FQ8LEKM1J2"
-      };
-      firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-    </script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyBDIdZpV2NPJgpPzCA8C5LXf4aTV_6EbFU",
+                authDomain: "turimoapp.firebaseapp.com",
+                projectId: "turimoapp",
+                storageBucket: "turimoapp.appspot.com",
+                messagingSenderId: "905578158491",
+                appId: "1:905578158491:web:6a6bd9b125603bdb7c293e",
+                measurementId: "G-FQ8LEKM1J2"
+            };
+            firebase.initializeApp(firebaseConfig);
+            const auth = firebase.auth();
+        </script>
 
-    <script src="js/register.js" type="text/javascript"></script>
+        <script src="js/register.js" type="text/javascript"></script>
 
-  </body>
+    </body>
 
 </html>

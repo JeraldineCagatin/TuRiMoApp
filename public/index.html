@@ -22,7 +22,9 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="stream.html">Stream</a></li>
                 <li><a href="news.html">News</a></li>
-                <button id="signout">Sign out</button>
+                <form id="signup-form">
+                    <button>Sign out</button>
+                </form>
             </ul>
         </div>
     </nav>
@@ -34,16 +36,23 @@
         <button id="signout">Sign out</button>
     </ul>
 
-    <div class="container-fluid">
-        <div id="rcorners1"></div>
-        <div class="container2">
 
-            <div class="form-group">
-                <textarea class="form-control" placeholder="Write Something...." rows="5" id="comment"></textarea>
+    <div class="row">
+        <form class="col s12" id="newComment">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">title</i>
+                    <textarea id="commentContent" class="materialize-textarea" required></textarea>
+                    <label for="commentContent">Comment Now</label>
+                </div>
             </div>
-            <button style="background-color: blue;" class="button button2">SEND</button>
+            <button class="btn waves-effect waves-light">Send
+              <i class="material-icons right">send</i>
+          </button>
 
-        </div>
+
+        </form>
+
     </div>
 
 
@@ -74,7 +83,7 @@
             $(".sidenav").sidenav();
         });
     </script>
-
+    <script src="js/comment.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
     <script src="js/signout.js" type="text/javascript"></script>
 
