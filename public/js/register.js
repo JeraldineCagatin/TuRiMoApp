@@ -15,7 +15,7 @@ signupForm.addEventListener('submit', (e) => {
 
             newUser.updateProfile({
                 displayName: firstName + ' ' + lastName,
-                photoURL: "https://static.vecteezy.com/system/resources/thumbnails/000/364/628/original/Chef_Avatar_Illustration-03.jpg"
+                // photoURL: "https://www.iconspng.com/images/smiling-face/smiling-face.jpg"
             }).then(function() {
                 window.location = 'index.html';
 
