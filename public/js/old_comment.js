@@ -22,59 +22,42 @@ const postComment = (user) => {
 // SHOW COMMENT SECTION
 const commentSection = document.querySelector('.comment');
 
-let latestDoc = null;
-
-
-const showComment = async() => {
-
-    const ref = db.collection('comment')
-        .orderBy("commentDate")
-        .startAfter(latestDoc || 0)
-        .limit(6);
-
-    const data = await ref.get();
-
-
-
-    let template = '';
-
-    data.docs.forEach(doc => {
-
-        get = doc.data();
-        let date = new Date(doc.data().commentDate.toDate());
-        template +=
-            `
+function showComment(doc) {
+    let date = new Date(doc.data().commentDate.toDate());
+    let html = [
+        `
         <div class="container">
             <div class="card-panel hoverable">
-                <li class="collection-item avatar" id="${get.id}">
+                <li class="collection-item avatar" id="${doc.id}">
                     <img src="images/green_smile.png" alt="avatar" class="circle">
                     <span class="title">
-                        ${get.commentAuthor}
+                        ${doc.data().commentAuthor}
                     </span>
                     <p>
-                        ${get.commentContent}
+                        ${doc.data().commentContent}
                     </p>
-                  ${date.toUTCString()}
+                    ${date.toUTCString()}
                 </li>
             </div>
         </div>
         `
-    });
-    commentSection.innerHTML += template;
+    ].join('');
 
-    latestDoc = data.docs[data.docs.length - 1];
-
-    if (data.empty) {
-        page.removeEventListener('click', handeClick);
-    }
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    commentSection.appendChild(div);
 }
 
-window.addEventListener('DOMContentLoaded', () => showComment());
+// GET COMMENTS FROM FIRESTORE
+db.collection('comment')
+    .orderBy('commentDate', 'desc')
+    .limit(6)
+    .get()
+    .then(snapshot => {
+        snapshot.docs.forEach((doc) => {
+            showComment(doc);
+        });
+    });
 
 // PAGINATION
-const page = document.querySelector('.nextPage button');
-
-const handeClick = () => {
-    showComment();
-}
-page.addEventListener('click', handeClick);
+const
