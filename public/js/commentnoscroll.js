@@ -51,26 +51,10 @@ function showComment(doc) {
 // GET COMMENTS FROM FIRESTORE
 db.collection('comment')
     .orderBy('commentDate', 'desc')
+    .limit(6)
     .get()
     .then(snapshot => {
         snapshot.docs.forEach((doc) => {
             showComment(doc);
         });
     });
-
-
-// Get the currently signed-in user
-auth.onAuthStateChanged((user) => {
-    if (user) {
-        document.getElementById('hide').classList.remove('disabled');
-        console.log(user);
-        setupUI(user);
-        console.log(user.displayName);
-        postComment(user);
-    } else {
-        console.log('No User Found');
-        setupUI();
-        console.log('no user logged in');
-        postComment(null);
-    }
-});
