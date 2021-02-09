@@ -15,7 +15,7 @@ signupForm.addEventListener('submit', (e) => {
 
             newUser.updateProfile({
                 displayName: firstName + ' ' + lastName,
-                // photoURL: "https://www.iconspng.com/images/smiling-face/smiling-face.jpg"
+               //  photoURL: "https://www.iconspng.com/images/smiling-face/smiling-face.jpg"
             }).then(function() {
                 window.location = 'index.html';
 

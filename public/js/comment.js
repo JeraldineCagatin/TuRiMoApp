@@ -1,5 +1,6 @@
 //CREATE NEW COMMENT
-const postComment = (user) => {
+ const postComment = (user) => {
+
 
     const newComment = document.querySelector('#createComment');
     newComment.addEventListener('submit', (e) => {
@@ -28,8 +29,8 @@ function showComment(doc) {
         `
         <div class="container">
             <div class="card-panel hoverable">
-                <li class="collection-item avatar" id="${doc.id}">
-                    <img src="images/green_smile.png" alt="avatar" class="circle">
+                <li class="collection-item avatar" id="${doc.data().commentAuthorPhotoURL}">
+                    <img src="${doc.data().commentAuthorPhotoURL}" alt="avatar" class="circle">
                     <span class="title">
                         ${doc.data().commentAuthor}
                     </span>
@@ -74,3 +75,4 @@ auth.onAuthStateChanged((user) => {
         postComment(null);
     }
 });
+
