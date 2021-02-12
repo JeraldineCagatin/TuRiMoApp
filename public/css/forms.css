@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
 * {
     box-sizing: border-box;
 }
@@ -55,6 +56,7 @@ button {
     background-color: red;
     margin: 8px 0;
     width: 100%;
+    z-index: 99999;
 }
 
 .facebook {
@@ -63,16 +65,7 @@ button {
     width: 100%;
 }
 
-form {
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
+/* form {} */
 
 input {
     background-color: #eee;
@@ -104,6 +97,14 @@ input {
     left: 0;
     width: 50%;
     z-index: 2;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
 }
 
 .overlay-container {

@@ -1,6 +1,29 @@
 // REGISTER NEW USER
-const signupForm = document.querySelector('#signup-form');
 
+let photoDownURL = '';
+
+var uploader = document.getElementById('uploader');
+var fileButton = document.getElementById('photo');
+fileButton.addEventListener('change', (e) => {
+    e.preventDefault();
+    var file = e.target.files[0];
+    var storageRef = storage.ref('userProfile/' + file.name);
+    var task = storageRef.put(file);
+    task.on('state_changed', function progress(snapshot) {
+        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        uploader.style.width = percentage + '%';
+    }, (error) => {
+        console.error(error);
+
+    }, () => {
+        task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+            console.log('File available at', downloadURL);
+            photoDownURL = downloadURL;
+        });
+    });
+});
+
+const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -15,21 +38,21 @@ signupForm.addEventListener('submit', (e) => {
 
             newUser.updateProfile({
                 displayName: firstName + ' ' + lastName,
-               //  photoURL: "https://www.iconspng.com/images/smiling-face/smiling-face.jpg"
-            }).then(function() {
+                photoURL: photoDownURL,
+            }).then(function () {
+                alert('Welcome to TuRiMo');
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            db.collection('users').doc(newUser.uid).set({
+                userName: firstName + ' ' + lastName,
+                email: email,
+                userImg: photoDownURL,
+            }).then(function () {
+                
                 window.location = 'index.html';
-
-                db.collection('users').add({
-                    firstName: newUser['firstName'].value,
-                    lastName: newUser['lastName'].value,
-                    email: newUser['email'].value,
-                }).then(function() {
-                    alert('Welcome to TuRiMo');
-                }).catch(function(error) {
-                    console.log(error);
-                });
-
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.log(error);
             });
 

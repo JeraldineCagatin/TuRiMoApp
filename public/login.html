@@ -14,14 +14,15 @@
 <body style="background-image: url('images/tullahan.jpg');">
     <div class="container">
         <div class="form-container log-in-container">
+
+            <h1>Sign In</h1>
+
+            <button class="google" id="googleSignIn"><i class="fa fa-google fa-lg" aria-hidden="true"></i>
+                Log In with Google</button>
+            <button class="facebook" id="facebookSignIn"><i class="fa fa-facebook-official fa-lg"
+                    aria-hidden="true"></i>
+                Log In with Facebook </button>
             <form id="login-form">
-                <h1>Sign In</h1>
-
-                <button class="google" id="googleSignIn"><i class="fa fa-google fa-lg" aria-hidden="true"></i>
-                  Log In with Google</button>
-                <button class="facebook" id="facebookSignIn"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
-                  Log In with Facebook </button>
-
                 <span style="font-size: 15px;">OR</span>
 
                 <input id="login-email" type="email" placeholder="Email" class="validate" required>
@@ -64,10 +65,8 @@
         const storage = firebase.storage();
     </script>
 
-    <script src="js/auth.js" type="text/javascript"></script>
     <script src="js/login.js" type="text/javascript"></script>
-
-
+    <script src="js/auth.js" type="text/javascript"></script>
 </body>
 
 </html>
