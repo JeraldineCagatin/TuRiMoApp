@@ -1,3 +1,142 @@
-.parallax-container {
-    height: 100vh !important;
+body {
+    font-family: Arial;
+    text-transform: capitalize;
 }
+
+/* <blade keyframes|%20FadeInUp%20%7B%0D>0% {
+    transform: translateY(15px);
+    opacity: 0;
+}
+
+100% {
+    transform: translateY(0px);
+    opacity: 1;
+}
+} */
+
+/* 
+
+
+.progress.progress--0{
+    width: calc(0%);
+}
+
+.progress.progress--1 {
+    width: calc(25%);
+}
+
+.progress.progress--2 {
+    width: calc(50%);
+}
+
+.progress.progress--3 {
+    width: calc(75%);
+}
+
+.progress.progress--4 {
+    width: calc(100%);
+}
+
+.progress.progress--complete {
+    width: 100vw;
+}
+
+.progress__bg {
+    position: absolute;
+    width: 100vw;
+    height: 10px;
+    background-color: #E5E5E5 !important;
+    z-index: -1;
+}
+
+.progress__step {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.progress__step.progress__step--1 {
+    left: calc(25vw - 9px);
+}
+
+.progress__step.progress__step--2 {
+    left: calc(50vw - 9px);
+}
+
+.progress__step.progress__step--3 {
+    left: calc(74vw - 9px);
+}
+
+.progress__step.progress__step--5 {
+    left: calc(100vw - 9px);
+}
+
+.progress__step.progress__step--active {
+    color: #2183DD;
+    font-weight: 600;
+}
+
+.progress__step.progress__step--complete .progress__indicator {
+    background-color: #009900;
+    border-color: #2183DD;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress__step.progress__step--complete .progress__indicator .fa {
+    display: block;
+}
+
+.progress__step.progress__step--complete .progress__label {
+    font-weight: 600;
+    color: #009900;
+}
+
+.progress__indicator {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #808080;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.progress__indicator .fa {
+    display: none;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.progress__label {
+    position: absolute;
+    top: 40px;
+}
+
+.progress__actions {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+
+.btn {
+    width: fit-content;
+    padding: 5px 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:nth-child(2) {
+    margin: 0 10px;
+} */
