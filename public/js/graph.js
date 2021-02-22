@@ -34,7 +34,7 @@ var options = {
         yAxes: [{
             ticks: {
                 beginAtZero: true,
-                callback: function(value, index, values) {
+                callback: function(value) {
                     return value + ' inches';
                 },
                 min: 0,
@@ -58,21 +58,14 @@ var myChart = new Chart.Line(canvas, {
 
 function addData(download = NaN) {
     var datasets = myChart.data.datasets;
-    // var labels = myChart.data.labels;
     var downloadDataSet = datasets[0].data;
 
     var downloadDataLength = downloadDataSet.length;
-    // var didRemoveData = false;
     if (downloadDataLength > MAX_DATA_SET_LENGTH) {
         downloadDataSet.shift();
         didRemoveData = true;
     }
 
-    // if (didRemoveData) {
-    //     labels.shift();
-    // }
-
-    // labels.push(label);
     downloadDataSet.push(download);
     myChart.update();
 }

@@ -1,4 +1,4 @@
-//CREATE NEW COMMENT
+// //CREATE NEW COMMENT
 const postComment = (user) => {
 
     const newComment = document.querySelector('#createComment');
@@ -9,7 +9,7 @@ const postComment = (user) => {
             commentAuthor: user.displayName,
             commentAuthorUID: user.uid,
             commentAuthorPhotoURL: user.photoURL,
-            commentDate: (firebase.firestore.Timestamp.now()),
+            commentDate: firebase.firestore.Timestamp.now(),
         }).then(() => {
             window.location = 'stream.html';
         }).catch(err => {
@@ -28,8 +28,8 @@ let lastDoc = null;
 const showComment = async() => {
 
     const data = await db.collection('comment')
-        .orderBy('commentDate')
-        .startAfter(lastDoc || 0)
+        .orderBy('commentDate', 'desc')
+        .endAt(lastDoc || 0)
         .limit(6)
         .get();
 
@@ -43,7 +43,7 @@ const showComment = async() => {
         <div class="container">
             <div class="card-panel hoverable">
                 <li class="collection-item avatar" id="${get.id}">
-                    <img src="images/green_smile.png" alt="avatar" class="circle">
+                    <img src="${get.commentAuthorPhotoURL}" alt="avatar" class="circle">
                     <span class="title">
                         ${get.commentAuthor}
                     </span>
@@ -64,12 +64,14 @@ const showComment = async() => {
         page.removeEventListener('click', handeClick);
     }
 }
-window.addEventListener('DOMContentLoaded', () => showComment());
 
-// PAGINATION
+
+// // PAGINATION
 const page = document.querySelector('.nextPage button');
 
 const handeClick = () => {
     showComment();
 }
 page.addEventListener('click', handeClick);
+
+window.addEventListener('DOMContentLoaded', () => showComment());

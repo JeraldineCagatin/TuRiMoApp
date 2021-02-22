@@ -10,7 +10,7 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then((user) => {
         if (user) {
             window.location = 'index.html';
-            document.getElementById('userName').innerHTML=user.email;
+            // document.getElementById('userName').innerHTML=user.email;
         }
     });
 });

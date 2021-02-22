@@ -1,0 +1,15 @@
+#AdminDivOnly {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#AdminDivOnly .input-field {
+    margin-left: 0;
+}
+
+#admin-form {
+    display: none;
+}
