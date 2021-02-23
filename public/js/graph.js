@@ -2,34 +2,44 @@ var MAX_DATA_SET_LENGTH = 24;
 
 var dbDocRef = database.ref().child('Distance_Values');
 dbDocRef.on('child_added', (data) => {
-    addData(data.val());
+    addData(parseFloat(data.val()).toFixed(2));
 });
-
-
-
 
 var canvas = document.getElementById('myChart');
 var data = {
     labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00',
         '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00',
-        '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'],
+        '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'
+    ],
     datasets: [{
         label: 'Reading of water level by proximity sensor',
         data: [0],
         backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(0, 180, 216, 0.2)',
         ],
         borderColor: [
-            'rgba(255, 99, 132, 1)',
+            'rgba(2, 62, 138, 0.86)',
         ],
         borderWidth: 2,
         fill: true,
         pointBorderColor: 'rgba(204,102,102,1)',
         pointBorderWidth: 1,
-    },]
+    }, ]
 }
 
 var options = {
+    plugins: {
+        datalabels: {
+            backgroundColor: 'rgba(0, 180, 216, 0.86)',
+            borderRadius: 4,
+            color: 'black',
+            font: {
+                weight: 'bold'
+            },
+            // formatter: Math.round,
+            padding: 6
+        }
+    },
     scales: {
         yAxes: [{
             ticks: {
@@ -42,6 +52,7 @@ var options = {
             }
         }],
         xAxes: [{
+            display: false,
             ticks: {
                 type: 'linear',
                 autoSkip: true,
