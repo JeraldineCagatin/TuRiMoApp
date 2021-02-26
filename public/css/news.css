@@ -1,0 +1,13 @@
+.horizontal .card-image img {
+    object-fit: cover;
+    width: auto;
+    height: 55vh;
+}
+
+@media only screen and (max-width: 1024px) {
+    .horizontal .card-image img {
+        object-fit: cover;
+        width: auto;
+        height: 65vh;
+    }
+}

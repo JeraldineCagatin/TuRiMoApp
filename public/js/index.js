@@ -9,6 +9,8 @@ const getUrlVids = (adminDocs) => {
                     db.collection('urlVideo').doc(doc.id).update({
                         urlVideo: adminForm['urlCode'].value,
                         adminId: adminDocs.id,
+                    }).then(() => {
+                        adminForm.reset();
                     });
                 });
             });
@@ -39,9 +41,11 @@ const getAdmin = (isUser) => {
     docRef.get().then((doc) => {
         if (doc.exists) {
             getUrlVids(doc);
-            adminForm.style.display = 'initial';
+            if (adminForm) {
+                adminForm.style.display = 'initial';
+            }
         } else {
-            
+
         }
     }).catch((error) => {
         console.log("Error getting document:", error);
