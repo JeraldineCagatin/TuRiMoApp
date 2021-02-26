@@ -45,12 +45,8 @@ function showComment(doc) {
     ].join('');
 
     const div = document.createElement('div');
-    div.innerHTML = html;
-    commentSection.appendChild(div);
-}
-
-// GET COMMENTS FROM FIRESTORE
-db.collection('comment')
+    div.innerHTML = ht
+    ``)
     .orderBy('commentDate', 'desc')
     .get()
     .then(snapshot => {
