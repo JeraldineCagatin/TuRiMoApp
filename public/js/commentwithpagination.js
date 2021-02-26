@@ -67,11 +67,12 @@ const showComment = async() => {
 
 
 // // PAGINATION
-const page = document.querySelector('.nextPage button');
+const page = document.querySelector('.nextPage a');
 
 const handeClick = () => {
     showComment();
 }
+
 page.addEventListener('click', handeClick);
 
 window.addEventListener('DOMContentLoaded', () => showComment());

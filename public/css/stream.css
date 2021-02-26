@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.comment {
+    border: none;
+}
+
 #AdminDivOnly .input-field {
     margin-left: 0;
 }
@@ -13,3 +17,17 @@
 #admin-form {
     display: none;
 }
+
+.nextPage {
+    margin-bottom: 2%;
+}
+
+/* .comment {
+    max-height: 80%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.comment::-webkit-scrollbar {
+    display: none;
+} */
