@@ -23,13 +23,12 @@ const postComment = (user) => {
 // SHOW COMMENT SECTION
 const commentSection = document.querySelector('.comment');
 
-let lastDoc = null;
+let lastDoc = '';
 
 const showComment = async() => {
-
     const data = await db.collection('comment')
         .orderBy('commentDate', 'desc')
-        .endAt(lastDoc || 0)
+        .startAfter(lastDoc)
         .limit(6)
         .get();
 
