@@ -1,12 +1,15 @@
-const newsRow = document.querySelector('.newsRow');
 
-fetch('http://newsapi.org/v2/top-headlines?country=ph&apiKey=f4a2965964d9408c8fb46fd3359e8faf')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (myJson) {
-        // console.log(myJson.articles);
-        var newsArticles = myJson.articles;
+const newsRow = document.querySelector('.newsRow');
+var url = 'https://newsapi.org/v2/top-headlines?' +
+    'country=ph&' +
+    'apiKey=f4a2965964d9408c8fb46fd3359e8faf';
+
+var req = new Request(url);
+
+fetch(req)
+    .then(response => response.json())
+    .then((data) => {
+        var newsArticles = data.articles;
 
         for (var index = 0; index < newsArticles.length; index++) {
             let cardImage = '';

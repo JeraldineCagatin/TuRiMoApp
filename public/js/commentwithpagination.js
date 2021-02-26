@@ -75,3 +75,11 @@ const handeClick = () => {
 page.addEventListener('click', handeClick);
 
 window.addEventListener('DOMContentLoaded', () => showComment());
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        $('#hide').removeClass('disabled');
+    } else {
+        $('#hide').addClass('disabled');
+    }
+});
