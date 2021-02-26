@@ -11,9 +11,15 @@ service cloud.firestore {
         	allow write, read: if request.auth.uid != null;
       }
       
-      match /admin/{userId} {
-      		allow read: if request.auth != null && request.auth.uid == userId;
+      match /admin/{adminId} {
+      		allow read: if request.auth != null && request.auth.uid == adminId;
           allow create, update, delete: if false;
+      }
+      
+      match /urlVideo/{urlVideoId} {
+      		allow read: if true;
+          allow create, delete: if false;
+          allow update: if get(/databases/$(database)/documents/admin/$(request.auth.uid)).data.isAdmin == true;
       }
   }
 }

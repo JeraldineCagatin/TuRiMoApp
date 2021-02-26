@@ -3,6 +3,79 @@ body {
     text-transform: capitalize;
 }
 
+@media (max-width: 320px) {
+    .container-fluid {
+        height: 40vh !important;
+    }
+    .container-fluid .chart-container h4 {
+        font-size: 3vh;
+    }
+    .container-fluid .chart-container h5 {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 375px) {
+    .container-fluid {
+        height: 50vh !important;
+    }
+    .container-fluid .chart-container h4 {
+        font-size: 3vh;
+    }
+    .container-fluid .chart-container h5 {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 425px) {
+    .container-fluid {
+        height: 60vh !important;
+    }
+    .container-fluid .chart-container h4 {
+        font-size: 4vh;
+    }
+    .container-fluid .chart-container h5 {
+        font-size: 3vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        height: 90vh !important;
+    }
+    .container-fluid .chart-container h4 {
+        font-size: 4vh;
+    }
+    .container-fluid .chart-container h5 {
+        font-size: 3vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-fluid {
+        height: 90vh !important;
+    }
+    .container-fluid .chart-container h4 {
+        font-size: 4vh;
+    }
+    .container-fluid .chart-container h5 {
+        font-size: 3vh;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container-fluid {
+        height: 120vh !important;
+    }
+    .container-fluid .chart-container h4 {
+        font-size: 4vh;
+    }
+    .container-fluid .chart-container h5 {
+        font-size: 3vh;
+    }
+}
+
+
 /* <blade keyframes|%20FadeInUp%20%7B%0D>0% {
     transform: translateY(15px);
     opacity: 0;
@@ -13,6 +86,7 @@ body {
     opacity: 1;
 }
 } */
+
 
 /* 
 
